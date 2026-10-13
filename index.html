@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Demo</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #fafafa;
+      color: #262626;
+      font-family: Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 420px;
+      margin: auto;
+      padding: 24px 18px;
+    }
+
+    .language {
+      text-align: center;
+      color: #777;
+      margin: 20px 0 65px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e5e5e5;
+      padding: 28px 22px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .logo {
+      font-family: cursive;
+      font-size: 42px;
+      margin: 8px 0 20px;
+    }
+
+    .notice {
+      font-size: 12px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    input, button {
+      display: block;
+      width: 100%;
+      padding: 14px 12px;
+      margin-top: 12px;
+      border-radius: 6px;
+    }
+
+    input {
+      border: 1px solid #ddd;
+      background: #fafafa;
+    }
+
+    button {
+      background: #3867ed;
+      border: 0;
+      color: white;
+      font-weight: bold;
+      margin-top: 16px;
+    }
+
+    #result {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="language">نموذج تجريبي</div>
+
+    <main class="card">
+      <div class="logo">Login Demo</div>
+      <p class="notice">
+        صفحة تعليمية لاختبار تسجيل الدخول ببيانات وهمية فقط.
+      </p>
+
+      <form id="demo">
+        <input id="username" placeholder="اسم مستخدم تجريبي" required>
+        <input id="password" type="password"
+          placeholder="كلمة مرور وهمية" required>
+        <button type="submit">اختبار تسجيل الدخول</button>
+      </form>
+
+      <p id="result" aria-live="polite"></p>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("demo").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("result").textContent =
+        "نجحت المحاكاة! لم يتم إرسال أو حفظ بيانات الدخول.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
